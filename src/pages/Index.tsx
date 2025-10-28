@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const topPlayers = [
     { rank: 1, name: "xXDragonSlayerXx", kills: 15420, deaths: 2341, kd: 6.58 },
@@ -39,6 +41,7 @@ const Index = () => {
 
   const scrollToSection = (section: string) => {
     setActiveSection(section);
+    setMobileMenuOpen(false);
     const element = document.getElementById(section);
     element?.scrollIntoView({ behavior: "smooth" });
   };
@@ -75,6 +78,59 @@ const Index = () => {
                 Discord
               </Button>
             </div>
+            
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
+                  <Icon name="Menu" className="text-green-400" size={28} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-black/95 border-green-500/20">
+                <div className="flex flex-col gap-6 mt-8">
+                  <button 
+                    onClick={() => scrollToSection("home")} 
+                    className="flex items-center gap-3 text-gray-300 hover:text-green-400 transition-colors text-lg"
+                  >
+                    <Icon name="Home" size={24} />
+                    Главная
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("stats")} 
+                    className="flex items-center gap-3 text-gray-300 hover:text-green-400 transition-colors text-lg"
+                  >
+                    <Icon name="BarChart" size={24} />
+                    Статистика
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("shop")} 
+                    className="flex items-center gap-3 text-gray-300 hover:text-green-400 transition-colors text-lg"
+                  >
+                    <Icon name="ShoppingBag" size={24} />
+                    Магазин
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("rules")} 
+                    className="flex items-center gap-3 text-gray-300 hover:text-green-400 transition-colors text-lg"
+                  >
+                    <Icon name="ScrollText" size={24} />
+                    Правила
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection("monitoring")} 
+                    className="flex items-center gap-3 text-gray-300 hover:text-green-400 transition-colors text-lg"
+                  >
+                    <Icon name="Activity" size={24} />
+                    Мониторинг
+                  </button>
+                  <div className="border-t border-green-500/20 pt-6">
+                    <Button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700">
+                      <Icon name="MessageCircle" size={20} className="mr-2" />
+                      Discord
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>
