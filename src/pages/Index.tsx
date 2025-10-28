@@ -314,108 +314,55 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-black/50 border-green-500/30">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Icon name="BarChart3" className="text-green-400" size={24} />
-                  Активность игроков
-                </CardTitle>
-                <CardDescription>За последние 24 часа</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-gray-400">00:00 - 06:00</span>
-                      <span className="text-sm font-bold text-blue-400">120 игроков</span>
-                    </div>
-                    <div className="w-full bg-gray-800 rounded-full h-2">
-                      <div className="bg-blue-400 h-2 rounded-full" style={{width: '24%'}} />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-gray-400">06:00 - 12:00</span>
-                      <span className="text-sm font-bold text-green-400">285 игроков</span>
-                    </div>
-                    <div className="w-full bg-gray-800 rounded-full h-2">
-                      <div className="bg-green-400 h-2 rounded-full" style={{width: '57%'}} />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-gray-400">12:00 - 18:00</span>
-                      <span className="text-sm font-bold text-yellow-400">412 игроков</span>
-                    </div>
-                    <div className="w-full bg-gray-800 rounded-full h-2">
-                      <div className="bg-yellow-400 h-2 rounded-full" style={{width: '82%'}} />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-gray-400">18:00 - 00:00</span>
-                      <span className="text-sm font-bold text-red-400">498 игроков</span>
-                    </div>
-                    <div className="w-full bg-gray-800 rounded-full h-2">
-                      <div className="bg-red-400 h-2 rounded-full" style={{width: '100%'}} />
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-green-500/30">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Icon name="Cpu" className="text-green-400" size={24} />
-                  Производительность
-                </CardTitle>
-                <CardDescription>Текущее состояние сервера</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
+          <Card className="bg-black/50 border-green-500/30 max-w-3xl mx-auto">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Icon name="BarChart3" className="text-green-400" size={24} />
+                Активность игроков
+              </CardTitle>
+              <CardDescription>За последние 24 часа</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-400">CPU</span>
-                    <span className="text-sm font-bold text-green-400">42%</span>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm text-gray-400">00:00 - 06:00</span>
+                    <span className="text-sm font-bold text-blue-400">120 игроков</span>
                   </div>
                   <div className="w-full bg-gray-800 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-green-500 to-emerald-600 h-2 rounded-full" style={{width: '42%'}} />
+                    <div className="bg-blue-400 h-2 rounded-full" style={{width: '24%'}} />
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-400">RAM</span>
-                    <span className="text-sm font-bold text-blue-400">68%</span>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm text-gray-400">06:00 - 12:00</span>
+                    <span className="text-sm font-bold text-green-400">285 игроков</span>
                   </div>
                   <div className="w-full bg-gray-800 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-blue-500 to-cyan-600 h-2 rounded-full" style={{width: '68%'}} />
+                    <div className="bg-green-400 h-2 rounded-full" style={{width: '57%'}} />
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-400">Диск</span>
-                    <span className="text-sm font-bold text-purple-400">35%</span>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm text-gray-400">12:00 - 18:00</span>
+                    <span className="text-sm font-bold text-yellow-400">412 игроков</span>
                   </div>
                   <div className="w-full bg-gray-800 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-600 h-2 rounded-full" style={{width: '35%'}} />
+                    <div className="bg-yellow-400 h-2 rounded-full" style={{width: '82%'}} />
                   </div>
                 </div>
-                <div className="pt-2 border-t border-gray-800">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-xs text-gray-400">Загружено чанков</p>
-                      <p className="text-lg font-bold text-green-400">12,847</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400">Энтити</p>
-                      <p className="text-lg font-bold text-blue-400">3,291</p>
-                    </div>
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm text-gray-400">18:00 - 00:00</span>
+                    <span className="text-sm font-bold text-red-400">498 игроков</span>
+                  </div>
+                  <div className="w-full bg-gray-800 rounded-full h-2">
+                    <div className="bg-red-400 h-2 rounded-full" style={{width: '100%'}} />
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
