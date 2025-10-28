@@ -67,6 +67,9 @@ const Index = () => {
               <button onClick={() => scrollToSection("rules")} className="text-gray-300 hover:text-green-400 transition-colors">
                 Правила
               </button>
+              <button onClick={() => scrollToSection("monitoring")} className="text-gray-300 hover:text-green-400 transition-colors">
+                Мониторинг
+              </button>
               <Button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700">
                 <Icon name="MessageCircle" size={18} className="mr-2" />
                 Discord
@@ -244,6 +247,174 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="monitoring" className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">
+            МОНИТОРИНГ СЕРВЕРА
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="bg-black/50 border-green-500/30 hover:border-green-500/50 transition-all">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-sm text-gray-400">Статус</CardTitle>
+                  <Icon name="Activity" className="text-green-400" size={20} />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse" />
+                  <p className="text-2xl font-bold text-green-400">Онлайн</p>
+                </div>
+                <p className="text-xs text-gray-500 mt-1">Аптайм: 99.8%</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-green-500/30 hover:border-green-500/50 transition-all">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-sm text-gray-400">TPS</CardTitle>
+                  <Icon name="Gauge" className="text-blue-400" size={20} />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-2xl font-bold text-blue-400">19.8</p>
+                <p className="text-xs text-gray-500 mt-1">Отличная производительность</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-green-500/30 hover:border-green-500/50 transition-all">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-sm text-gray-400">Игроков</CardTitle>
+                  <Icon name="Users" className="text-purple-400" size={20} />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-2xl font-bold text-purple-400">247 / 500</p>
+                <p className="text-xs text-gray-500 mt-1">Пик: 498 игроков</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-green-500/30 hover:border-green-500/50 transition-all">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-sm text-gray-400">Версия</CardTitle>
+                  <Icon name="Code" className="text-yellow-400" size={20} />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-2xl font-bold text-yellow-400">1.20.4</p>
+                <p className="text-xs text-gray-500 mt-1">Paper / Spigot</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="bg-black/50 border-green-500/30">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Icon name="BarChart3" className="text-green-400" size={24} />
+                  Активность игроков
+                </CardTitle>
+                <CardDescription>За последние 24 часа</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm text-gray-400">00:00 - 06:00</span>
+                      <span className="text-sm font-bold text-blue-400">120 игроков</span>
+                    </div>
+                    <div className="w-full bg-gray-800 rounded-full h-2">
+                      <div className="bg-blue-400 h-2 rounded-full" style={{width: '24%'}} />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm text-gray-400">06:00 - 12:00</span>
+                      <span className="text-sm font-bold text-green-400">285 игроков</span>
+                    </div>
+                    <div className="w-full bg-gray-800 rounded-full h-2">
+                      <div className="bg-green-400 h-2 rounded-full" style={{width: '57%'}} />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm text-gray-400">12:00 - 18:00</span>
+                      <span className="text-sm font-bold text-yellow-400">412 игроков</span>
+                    </div>
+                    <div className="w-full bg-gray-800 rounded-full h-2">
+                      <div className="bg-yellow-400 h-2 rounded-full" style={{width: '82%'}} />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm text-gray-400">18:00 - 00:00</span>
+                      <span className="text-sm font-bold text-red-400">498 игроков</span>
+                    </div>
+                    <div className="w-full bg-gray-800 rounded-full h-2">
+                      <div className="bg-red-400 h-2 rounded-full" style={{width: '100%'}} />
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-green-500/30">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Icon name="Cpu" className="text-green-400" size={24} />
+                  Производительность
+                </CardTitle>
+                <CardDescription>Текущее состояние сервера</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-gray-400">CPU</span>
+                    <span className="text-sm font-bold text-green-400">42%</span>
+                  </div>
+                  <div className="w-full bg-gray-800 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-green-500 to-emerald-600 h-2 rounded-full" style={{width: '42%'}} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-gray-400">RAM</span>
+                    <span className="text-sm font-bold text-blue-400">68%</span>
+                  </div>
+                  <div className="w-full bg-gray-800 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-blue-500 to-cyan-600 h-2 rounded-full" style={{width: '68%'}} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-gray-400">Диск</span>
+                    <span className="text-sm font-bold text-purple-400">35%</span>
+                  </div>
+                  <div className="w-full bg-gray-800 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-purple-500 to-pink-600 h-2 rounded-full" style={{width: '35%'}} />
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-gray-800">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-xs text-gray-400">Загружено чанков</p>
+                      <p className="text-lg font-bold text-green-400">12,847</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400">Энтити</p>
+                      <p className="text-lg font-bold text-blue-400">3,291</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
